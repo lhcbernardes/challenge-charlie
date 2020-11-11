@@ -45,16 +45,22 @@ temp;
     });
   }
 
-  getStyle() {
+  getStyle(darkness = 0 ) {
     var resultado = '';
+    darkness *= 10;
     if(this.weather.cod === 200){
       return resultado = 'rgba(0, 0, 0, 0.445)';
     } else if (this.weather.list[0].temp.day <= 15){
-      return resultado = ' rgba(0, 68, 255, 0.5)';
+      resultado = 'rgba(0, '+(255-darkness)+', '+(255-darkness)+', 0.8)';
+      return resultado;
+
     } else if (this.weather.list[0].temp.day >= 35){
-      return resultado = ' rgba(255, 60, 0, 0.575)';
+      resultado = 'rgba(0, '+(255-darkness)+'​​, '+(60-darkness)+', 0.5)';
+      return resultado;
+
     }else if (this.weather.list[0].temp.day > 15 && this.weather.list[0].temp.day < 35){
-      return resultado = 'rgba(255, 208, 0, 0.5)';
+      resultado = 'rgba('+(255-darkness)+', '+(208-darkness)+', 0, 0.8)' ;
+      return resultado;
     }
   }
 }

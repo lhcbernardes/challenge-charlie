@@ -1,6 +1,6 @@
 
-<div class="bgapp" *ngIf="img" style="background: url('http://bing.com.br{{img.images[0].url}}')">
-   <div class="container text-white" [style.background-color]="getStyle()" *ngIf="weather">
+<div class="bgapp" *ngIf="img"  style="background: url('http://bing.com.br{{img.images[0].url}}')">
+   <div class="container text-white" [style.background-color]="getStyle(0)" *ngIf="weather">
      <div class = "row">
       <div class="input-group input-group-lg">
         <img  src="../../assets/44.svg" class="img-responsive zmdi zmdi-link mx-auto" width="50" height="50" alt="01d.png">
@@ -41,7 +41,7 @@
              
       </div>
     </div>
-    <div class="row" [style.background-color]="getStyle()">
+    <div class="row" [style.background-color]="getStyle(3)">
       <div class="col-md-6">
         
       </div>
@@ -50,7 +50,7 @@
         <h4>{{weather.list[1].temp.day}} &#176;C</h4>
       </div>
     </div>
-    <div class="row" [style.background-color]="getStyle()" >
+    <div class="row" [style.background-color]="getStyle(10)" >
       <div class="col-md-6">
         
       </div>
